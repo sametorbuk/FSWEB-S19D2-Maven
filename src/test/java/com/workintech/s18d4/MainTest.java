@@ -1,5 +1,6 @@
 package com.workintech.s18d4;
 
+import com.workintech.s18d4.dto.CustomerResponse;
 import com.workintech.s18d4.entity.Account;
 import com.workintech.s18d4.entity.Address;
 import com.workintech.s18d4.entity.Customer;
@@ -371,10 +372,11 @@ class MainTest {
     @DisplayName("CustomerService::delete")
     void testDeleteCustomerService() {
         when(mockCustomerRepository.findById(1L)).thenReturn(Optional.of(sampleCustomerForCustomerServiceTest));
-        doNothing().when(mockCustomerRepository).delete(sampleCustomerForCustomerServiceTest);
+        doNothing().when(mockCustomerRepository).deleteById(1L);
         Customer deletedCustomer = customerService.delete(1L);
         assertEquals(sampleCustomerForCustomerServiceTest, deletedCustomer);
     }
+
 
     @Test
     @DisplayName("CustomerService::delete - Customer not found")
