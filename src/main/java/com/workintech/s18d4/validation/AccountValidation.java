@@ -15,7 +15,7 @@ public class AccountValidation {
 
 
     public static boolean isAccountValid(Account account){
-        if(account.getAccountName() == null || account.getId() == null || account.getCustomer() == null || account.getAccountName() == null || account.getMoneyAmount() == null){
+        if(account.getAccountName() == null || account.getCustomer() == null || account.getAccountName() == null || account.getMoneyAmount() == null){
             return false;
         }
         return true;

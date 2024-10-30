@@ -16,7 +16,7 @@ public class CustomerValidation {
 
 
     public static boolean isCustomerValid(Customer customer){
-        if(customer.getId() == null || customer.getEmail()==null || customer.getSalary()==null ||
+        if( customer.getEmail()==null || customer.getSalary()==null ||
                 customer.getFirstName()==null || customer.getLastName()==null || customer.getAddress()==null){
             return false;
         }

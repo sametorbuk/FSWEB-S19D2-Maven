@@ -1,6 +1,7 @@
 package com.workintech.s18d4.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,7 +20,7 @@ import java.util.List;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -38,6 +39,7 @@ public class Customer {
     private Address address;
 
 
+    @JsonIgnore
     @OneToMany(mappedBy="customer")
     private List<Account> account;
 
